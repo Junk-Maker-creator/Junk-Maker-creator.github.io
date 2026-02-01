@@ -265,6 +265,11 @@
 
         .about-img {
             margin-bottom: 1.5rem;
+            text-align: center;
+            width: 100%;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .about-img img {
@@ -273,6 +278,7 @@
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             object-fit: cover;
+            display: block;
         }
 
         .about-text {
@@ -308,6 +314,78 @@
             font-size: 1.5rem;
             color: var(--primary-color);
             margin-right: 1rem;
+        }
+
+        /* 实践经历 */
+        .experience {
+            padding: 5rem 2rem;
+            background-color: var(--light-gray);
+        }
+
+        .experience-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .experience-card {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border: 2px solid var(--accent-color);
+            border-radius: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .experience-card::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid var(--primary-color);
+            pointer-events: none;
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 248, 220, 0.9);
+        }
+
+        .experience-header {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .experience-header h3 {
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .experience-date {
+            color: var(--accent-color);
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .experience-position {
+            color: var(--gray-color);
+            font-style: italic;
+        }
+
+        .experience-details p {
+            color: var(--gray-color);
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .experience-details p:last-child {
+            margin-bottom: 0;
         }
 
         /* 技能 */
