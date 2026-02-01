@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>个人作品集</title>
+    <title>王乐的个人主页</title>
     <style>
         * {
             margin: 0;
@@ -12,33 +12,38 @@
         }
 
         :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --light-color: #f8f9fa;
-            --dark-color: #343a40;
-            --accent-color: #e74c3c;
-            --gray-color: #6c757d;
-            --light-gray: #f1f3f5;
+            --primary-color: #8b0000;
+            --secondary-color: #3e2723;
+            --light-color: #f5f5dc;
+            --dark-color: #2c1810;
+            --accent-color: #d4af37;
+            --gray-color: #6d4c41;
+            --light-gray: #efebe9;
             --transition: all 0.3s ease;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'SimSun', 'STSong', serif;
             line-height: 1.6;
             color: var(--dark-color);
             background-color: var(--light-color);
+            background-image: url('data:image/jpeg;base64,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');
+            background-repeat: repeat;
+            background-size: auto;
+            background-position: top left;
         }
 
         /* 导航栏 */
         header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(245, 245, 220, 0.95);
+            box-shadow: 0 2px 10px rgba(139, 0, 0, 0.2);
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
             transition: var(--transition);
+            border-bottom: 2px solid var(--accent-color);
         }
 
         nav {
@@ -51,10 +56,12 @@
         }
 
         .logo {
-            font-size: 1.5rem;
+            font-size: 1.8rem;
             font-weight: 700;
             color: var(--primary-color);
             text-decoration: none;
+            font-family: 'SimSun', 'STSong', serif;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
         }
 
         .nav-links {
@@ -71,10 +78,27 @@
             text-decoration: none;
             font-weight: 500;
             transition: var(--transition);
+            font-family: 'SimSun', 'STSong', serif;
+            position: relative;
         }
 
         .nav-links a:hover {
             color: var(--primary-color);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
         }
 
         .burger {
@@ -96,13 +120,30 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            background: linear-gradient(135deg, #8b0000, #3e2723);
+            background-image: url('https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=ancient%20chinese%20scroll%20background%2C%20dark%20red%20and%20brown%20tones%2C%20traditional%20chinese%20pattern%2C%20grunge%20texture&image_size=landscape_16_9');
+            background-size: cover;
+            background-position: center;
             color: white;
             text-align: center;
             padding: 0 2rem;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(139, 0, 0, 0.7);
+            z-index: 1;
         }
 
         .hero-content {
+            position: relative;
+            z-index: 2;
             max-width: 800px;
         }
 
@@ -123,29 +164,42 @@
             padding: 0.8rem 2rem;
             background-color: white;
             color: var(--primary-color);
-            border-radius: 50px;
+            border-radius: 0;
             text-decoration: none;
             font-weight: 600;
             transition: var(--transition);
-            border: none;
+            border: 2px solid var(--accent-color);
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            font-family: 'SimSun', 'STSong', serif;
         }
 
         .btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: var(--primary-color);
         }
 
         .btn-primary {
             background-color: var(--primary-color);
             color: white;
+            border-color: var(--accent-color);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
         }
 
         .btn-secondary {
             background-color: transparent;
             color: white;
-            border: 2px solid white;
+            border: 2px solid var(--accent-color);
             margin-left: 1rem;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(212, 175, 55, 0.2);
         }
 
         /* 关于我 */
@@ -169,42 +223,60 @@
             color: var(--dark-color);
             position: relative;
             display: inline-block;
-            padding-bottom: 1rem;
+            padding: 0 2rem;
+            font-family: 'SimSun', 'STSong', serif;
+        }
+
+        .section-title h2::before,
+        .section-title h2::after {
+            content: '❖';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+
+        .section-title h2::before {
+            left: 0;
         }
 
         .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100px;
-            height: 4px;
-            background-color: var(--primary-color);
-            border-radius: 2px;
+            right: 0;
         }
 
         .about-content {
             display: flex;
             flex-wrap: wrap;
-            align-items: center;
-            gap: 4rem;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+
+        .about-left {
+            flex: 0 0 35%;
+            min-width: 280px;
+            max-width: 400px;
+        }
+
+        .about-right {
+            flex: 1;
+            min-width: 400px;
         }
 
         .about-img {
-            flex: 1;
-            min-width: 300px;
+            margin-bottom: 1.5rem;
         }
 
         .about-img img {
             width: 100%;
+            height: auto;
             border-radius: 10px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
         }
 
         .about-text {
-            flex: 1;
-            min-width: 300px;
+            margin-bottom: 1.5rem;
         }
 
         .about-text h3 {
@@ -251,16 +323,30 @@
         }
 
         .skill-card {
-            background-color: white;
+            background-color: rgba(255, 255, 255, 0.9);
             padding: 2rem;
-            border-radius: 10px;
+            border: 2px solid var(--accent-color);
+            border-radius: 0;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
+            position: relative;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid var(--primary-color);
+            pointer-events: none;
         }
 
         .skill-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 248, 220, 0.9);
         }
 
         .skill-card i {
@@ -293,16 +379,30 @@
         }
 
         .project-card {
-            background-color: var(--light-gray);
-            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 2px solid var(--accent-color);
+            border-radius: 0;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             transition: var(--transition);
+            position: relative;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid var(--primary-color);
+            pointer-events: none;
         }
 
         .project-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 248, 220, 0.9);
         }
 
         .project-img {
@@ -347,13 +447,17 @@
             background-color: var(--primary-color);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 0;
             font-weight: 500;
             transition: var(--transition);
+            border: 1px solid var(--accent-color);
+            font-family: 'SimSun', 'STSong', serif;
         }
 
         .project-links a:hover {
             background-color: var(--secondary-color);
+            border-color: var(--primary-color);
+            transform: translateY(-2px);
         }
 
         /* 联系我 */
@@ -448,11 +552,15 @@
             color: white;
             padding: 3rem 2rem;
             text-align: center;
+            background-image: url('https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=ancient%20chinese%20scroll%20border%2C%20dark%20background%2C%20traditional%20chinese%20pattern&image_size=square_hd');
+            background-repeat: repeat;
+            border-top: 2px solid var(--accent-color);
         }
 
         .footer-content {
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
         }
 
         .social-links {
@@ -469,7 +577,8 @@
             width: 50px;
             height: 50px;
             background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
+            border: 1px solid var(--accent-color);
+            border-radius: 0;
             color: white;
             font-size: 1.2rem;
             transition: var(--transition);
@@ -479,13 +588,15 @@
         .social-links a:hover {
             background-color: var(--primary-color);
             transform: translateY(-3px);
+            border-color: var(--primary-color);
         }
 
         .footer-bottom {
             margin-top: 2rem;
             padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid var(--accent-color);
             color: rgba(255, 255, 255, 0.7);
+            font-family: 'SimSun', 'STSong', serif;
         }
 
         /* 响应式设计 */
@@ -585,13 +696,12 @@
     <!-- 导航栏 -->
     <header>
         <nav>
-            <a href="#" class="logo">我的作品集</a>
+            <a href="#" class="logo">王乐</a>
             <ul class="nav-links">
                 <li><a href="#hero">首页</a></li>
                 <li><a href="#about">关于我</a></li>
                 <li><a href="#skills">技能</a></li>
                 <li><a href="#projects">项目</a></li>
-                <li><a href="#contact">联系我</a></li>
             </ul>
             <div class="burger">
                 <div class="line1"></div>
@@ -604,11 +714,11 @@
     <!-- 英雄区域 -->
     <section id="hero" class="hero">
         <div class="hero-content">
-            <h1>你好，我是 [你的名字]</h1>
-            <p>前端开发工程师 | UI/UX 设计师</p>
+            <h1>你好，我是 王乐</h1>
+            <p>欢迎来到我的个人网站</p>
+            <p>机械工程专业 | 结构工程师</p>
             <div>
-                <a href="#projects" class="btn btn-primary">查看我的作品</a>
-                <a href="#contact" class="btn btn-secondary">联系我</a>
+                <a href="#projects" class="btn btn-primary">查看我的项目</a>
             </div>
         </div>
     </section>
@@ -620,30 +730,149 @@
                 <h2>关于我</h2>
             </div>
             <div class="about-content">
-                <div class="about-img">
-                    <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=professional%20portrait%20of%20a%20young%20asian%20developer%20in%20casual%20business%20attire%2C%20smiling%2C%20clean%20background&image_size=portrait_4_3" alt="个人照片">
-                </div>
-                <div class="about-text">
-                    <h3>我是一名充满激情的前端开发工程师</h3>
-                    <p>拥有3年的前端开发经验，专注于创建美观、响应式的网站和应用程序。我热爱学习新技术，不断提升自己的技能，以 deliver 高质量的产品。</p>
-                    <p>我擅长使用现代前端技术栈，包括 HTML5、CSS3、JavaScript、React 和 Vue 等，同时也对 UI/UX 设计有浓厚的兴趣。我相信技术与设计的结合能够创造出卓越的用户体验。</p>
+                <!-- 左侧模块：头像和基本信息 -->
+                <div class="about-left">
+                    <div class="about-img">
+                        <img src="头像.jpg" alt="王乐头像">
+                    </div>
+                    <div class="about-text">
+                        <h3>我是一名充满激情的结构工程师</h3>
+                        <p>就读于武汉科技大学机械工程专业，热爱机械领域的的学习和实践，积极参与各类学科竞赛和社会实践活动。</p>
+                        <p>在校期间，我获得了多项荣誉称号和奖学金，累计获得机械类学科竞赛项目国家级奖项6项（除去ROBOCON的10多项奖项之后），省级奖项27项，校级奖项若干。</p>
+                    </div>
                     <div class="about-info">
                         <div class="info-item">
                             <i class="fas fa-calendar-alt"></i>
-                            <span><strong>出生日期:</strong> 1995年1月1日</span>
+                            <span><strong>出生日期:</strong> 2004.3.26</span>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-map-marker-alt"></i>
-                            <span><strong>所在地:</strong> 北京</span>
+                            <span><strong>所在地:</strong> 湖北-咸宁</span>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-envelope"></i>
-                            <span><strong>邮箱:</strong> example@qq.com</span>
+                            <span><strong>邮箱:</strong> 847200546@qq.com</span>
                         </div>
                         <div class="info-item">
                             <i class="fas fa-phone"></i>
-                            <span><strong>电话:</strong> 13800138000</span>
+                            <span><strong>电话:</strong> 19907248266</span>
                         </div>
+                    </div>
+                </div>
+                
+                <!-- 右侧模块：教育背景和获奖情况 -->
+                <div class="about-right">
+                    <!-- 教育背景 -->
+                    <div style="margin-bottom: 2rem;">
+                        <h4 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--dark-color);">教育背景</h4>
+                        <div style="background-color: var(--light-gray); padding: 1.5rem; border-radius: 8px;">
+                            <h5 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--dark-color);">武汉科技大学</h5>
+                            <p style="color: var(--gray-color);">2022-2026 | 机械工程专业 | 本科学位</p>
+                        </div>
+                    </div>
+                    
+                    <!-- 获奖情况 -->
+                    <div>
+                        <h4 style="font-size: 1.3rem; margin-bottom: 1rem; color: var(--dark-color);">获奖情况</h4>
+                        
+                        <!-- 荣誉称号 -->
+                        <div style="background-color: var(--light-gray); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <p style="color: var(--dark-color); font-weight: 500; margin-bottom: 0.5rem;">荣誉称号</p>
+                            <p style="color: var(--gray-color);">优秀共青团员、优秀学生、优秀营员、优秀会长、优秀青年志愿者、优秀学生干部</p>
+                        </div>
+                        
+                        <!-- 奖学金 -->
+                        <div style="background-color: var(--light-gray); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <p style="color: var(--dark-color); font-weight: 500; margin-bottom: 0.5rem;">奖学金</p>
+                            <p style="color: var(--gray-color);">三等奖学金 2年</p>
+                        </div>
+                        
+                        <!-- 新闻上稿 -->
+                        <div style="background-color: var(--light-gray); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <p style="color: var(--dark-color); font-weight: 500; margin-bottom: 0.5rem;">新闻上稿</p>
+                            <p style="color: var(--gray-color);">国家级新闻网站上稿 3篇，省级/校级网站 10余篇</p>
+                        </div>
+                        
+                        <!-- 国家级奖项 -->
+                        <div style="background-color: var(--light-gray); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <p style="color: var(--dark-color); font-weight: 500; margin-bottom: 0.5rem;">国家级奖项（6项）</p>
+                            <ul style="color: var(--gray-color); margin-left: 1.5rem; line-height: 1.8;">
+                                <li>2024睿抗机器人开发者大赛(RAICOM) - 冠军</li>
+                                <li>全国三维数字化创新设计大赛 - 最佳工业设计单项奖</li>
+                                <li>全国三维数字化创新设计大赛 - 国家二等奖</li>
+                                <li>全国三维数字化创新设计大赛 - 国家三等奖</li>
+                                <li>2024年中国大学生机械工程创新创意大赛 - 国家二等奖</li>
+                                <li>2024睿抗机器人开发者大赛(RAICOM) - 国家三等奖</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 省级奖项 -->
+                        <div style="background-color: var(--light-gray); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <p style="color: var(--dark-color); font-weight: 500; margin-bottom: 0.5rem;">省级奖项（27项）</p>
+                            <ul style="color: var(--gray-color); margin-left: 1.5rem; line-height: 1.8;">
+                                <li>全国大学生机械创新设计大赛 - 省级二等奖（农机设计）</li>
+                                <li>2024年中国大学生机械工程创新创意大赛 - 省二等奖</li>
+                                <li>全国三维数字化创新设计大赛 - 省级奖项14项</li>
+                                <li>中国高校机器人创意大赛 - 省二等奖3项</li>
+                                <li>中国高校机器人创意大赛 - 省三等奖2项</li>
+                                <li>2025全国大学生工程实践创新大赛 - 省级二等奖2项</li>
+                                <li>2024睿抗机器人开发者大赛(RAICOM) - 省一等奖</li>
+                                <li>2024睿抗机器人开发者大赛(RAICOM) - 省三等奖2项</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- 其他奖项 -->
+                        <div style="background-color: var(--light-gray); padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                            <p style="color: var(--dark-color); font-weight: 500; margin-bottom: 0.5rem;">其他奖项</p>
+                            <ul style="color: var(--gray-color); margin-left: 1.5rem; line-height: 1.8;">
+                                <li>蓝桥杯全国软件和信息技术专业人才大赛 - 工业产品设计 - 优秀奖</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 实践经历 -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>实践经历</h2>
+            </div>
+            <div class="experience-content">
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3>小光子（武汉）科技有限公司</h3>
+                        <p class="experience-date">2025.11-至今</p>
+                        <p class="experience-position">结构工程师</p>
+                    </div>
+                    <div class="experience-details">
+                        <p><strong>智能影像：</strong>参与智能天文望远镜项目研发，测试。包括机芯散热，结露测试、性能验证、减速器齿轮+机芯结构设计。</p>
+                        <p><strong>显微仪器：</strong>独立完成初步Demo搭建，电机性能测试验证。</p>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3>深圳市创客工场科技有限公司（xTool）</h3>
+                        <p class="experience-date">2025.7-10</p>
+                        <p class="experience-position">赛事研发实习生</p>
+                    </div>
+                    <div class="experience-details">
+                        <p>参与深圳市创客工场科技有限公司stater、inspire赛项及其相关配套产品研发、设计、渲染与成本控制；</p>
+                        <p>实习周期 3个月，其间多次接触学习公司相关产品，熟练掌握激光切割设备、图形化编程软件以及3D打印设备等的应用。</p>
+                    </div>
+                </div>
+                
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <h3>全国大学生机器人大赛ROBOCON-(图南战队)</h3>
+                        <p class="experience-date">2023-2025</p>
+                    </div>
+                    <div class="experience-details">
+                        <p>加入武汉科技大学ROBOCON团队两年，其间团队共获国家级奖项11项，个人挂名国家级奖项8项.</p>
+                        <p>主要负责串联四足机器人结构设计（平行四边形连杆机构设计，受力分析+Adams运动学结构解算）；并联四足机器人腿部结构优化设计；四足机器人整机轻量化设计。篮球机器人R1底盘结构设计，发射装置结构设计。</p>
                     </div>
                 </div>
             </div>
@@ -658,34 +887,34 @@
             </div>
             <div class="skills-content">
                 <div class="skill-card">
-                    <i class="fas fa-code"></i>
-                    <h3>前端开发</h3>
-                    <p>精通 HTML5、CSS3、JavaScript 等前端技术，熟悉 React、Vue 等现代前端框架，能够构建响应式、高性能的网站和应用。</p>
+                    <i class="fas fa-cogs"></i>
+                    <h3>机械设计</h3>
+                    <p>熟悉机械设计原理，掌握 CAD/CAM 软件操作，能够进行机械零部件设计和装配，具备较强的空间想象能力和制图能力。</p>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-paint-brush"></i>
-                    <h3>UI/UX 设计</h3>
-                    <p>具备良好的设计感，能够创建美观、易用的用户界面，注重用户体验，熟悉 Figma、Photoshop 等设计工具。</p>
+                    <i class="fas fa-robot"></i>
+                    <h3>机器人技术</h3>
+                    <p>了解机器人结构和控制原理，参与过机器人相关竞赛项目，具备机器人系统设计和调试能力。</p>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-server"></i>
-                    <h3>后端开发</h3>
-                    <p>了解 Node.js、Express 等后端技术，能够构建简单的后端服务，实现前后端分离架构。</p>
+                    <i class="fas fa-microchip"></i>
+                    <h3>电子电路</h3>
+                    <p>掌握基本电子电路知识，能够进行简单电路设计和调试，了解嵌入式系统原理和应用。</p>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-database"></i>
-                    <h3>数据库</h3>
-                    <p>熟悉 MySQL、MongoDB 等数据库技术，能够设计合理的数据结构，优化数据库查询性能。</p>
+                    <i class="fas fa-laptop-code"></i>
+                    <h3>编程能力</h3>
+                    <p>具备 C/C++、Python 等编程语言基础，能够进行简单的程序设计和算法实现，了解数据结构和算法知识。</p>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-mobile-alt"></i>
-                    <h3>移动开发</h3>
-                    <p>了解 React Native、Flutter 等跨平台移动开发技术，能够构建适配不同设备的移动应用。</p>
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>项目管理</h3>
+                    <p>具备良好的团队协作和项目管理能力，能够组织和参与团队项目，制定项目计划和执行方案。</p>
                 </div>
                 <div class="skill-card">
-                    <i class="fas fa-tools"></i>
-                    <h3>开发工具</h3>
-                    <p>熟悉 Git、Webpack、NPM 等开发工具，能够高效地进行代码管理、构建和部署。</p>
+                    <i class="fas fa-language"></i>
+                    <h3>语言能力</h3>
+                    <p>英语：CET-4/6 级，具备良好的听说读写能力，能够阅读专业英文文献。</p>
                 </div>
             </div>
         </div>
@@ -700,170 +929,43 @@
             <div class="projects-content">
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=modern%20e-commerce%20website%20interface%2C%20clean%20design%2C%20product%20grid%20layout&image_size=landscape_4_3" alt="电商网站">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=robot%20competition%20project%2C%20mechanical%20robot%20design%2C%20technical%20drawing&image_size=landscape_4_3" alt="机器人竞赛项目">
                     </div>
                     <div class="project-info">
-                        <h3>电商网站</h3>
-                        <p>使用 React 和 Node.js 构建的全功能电商网站，包含商品展示、购物车、订单管理等功能。</p>
+                        <h3>机器人竞赛项目</h3>
+                        <p>参与设计和制作的机器人竞赛项目，包含机械结构设计、控制系统开发和算法实现，获得国家级奖项。</p>
                         <div class="project-links">
                             <a href="#">查看详情</a>
-                            <a href="#">GitHub</a>
+                            <a href="#">项目文档</a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=personal%20blog%20website%20interface%2C%20minimalist%20design%2C%20article%20list&image_size=landscape_4_3" alt="个人博客">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=mechanical%20part%20design%2C%20CAD%20software%20interface%2C%203D%20modeling&image_size=landscape_4_3" alt="机械零部件设计">
                     </div>
                     <div class="project-info">
-                        <h3>个人博客</h3>
-                        <p>使用 Vue 和 Express 构建的个人博客系统，支持文章发布、评论、分类等功能。</p>
+                        <h3>机械零部件设计</h3>
+                        <p>使用 CAD 软件进行机械零部件设计，包含结构分析、强度计算和优化设计，应用于实际工程项目。</p>
                         <div class="project-links">
                             <a href="#">查看详情</a>
-                            <a href="#">GitHub</a>
+                            <a href="#">设计文档</a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=task%20management%20app%20interface%2C%20dashboard%20view%2C%20todo%20lists&image_size=landscape_4_3" alt="任务管理应用">
+                        <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=mechatronics%20system%20prototype%2C%20electrical%20circuit%20and%20mechanical%20parts&image_size=landscape_4_3" alt="机电一体化系统">
                     </div>
                     <div class="project-info">
-                        <h3>任务管理应用</h3>
-                        <p>使用 React Native 构建的跨平台任务管理应用，支持任务创建、分类、提醒等功能。</p>
+                        <h3>机电一体化系统</h3>
+                        <p>设计和实现的机电一体化系统，包含机械结构、电子电路和控制系统，实现自动化控制功能。</p>
                         <div class="project-links">
                             <a href="#">查看详情</a>
-                            <a href="#">GitHub</a>
+                            <a href="#">项目文档</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- 联系我 -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>联系我</h2>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>联系方式</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p>北京市朝阳区</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <p>example@qq.com</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <p>13800138000</p>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-globe"></i>
-                        <p>www.example.com</p>
-                    </div>
-                </div>
-                <div class="contact-form">
-                    <form action="#">
-                        <div class="form-group">
-                            <label for="name">姓名</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">邮箱</label>
-                            <input type="email" id="email" name="email" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="subject">主题</label>
-                            <input type="text" id="subject" name="subject" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">消息</label>
-                            <textarea id="message" name="message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">发送消息</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- 页脚 -->
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-                <p>&copy; 2026 我的作品集. 保留所有权利.</p>
-            </div>
-            <div class="footer-bottom">
-                <p>使用 HTML、CSS 和 JavaScript 构建</p>
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // 导航栏切换
-        const burger = document.querySelector('.burger');
-        const nav = document.querySelector('.nav-links');
-        const navLinks = document.querySelectorAll('.nav-links li');
-
-        burger.addEventListener('click', () => {
-            // 切换导航栏
-            nav.classList.toggle('active');
-            
-            // 切换汉堡菜单
-            burger.classList.toggle('toggle');
-        });
-
-        // 平滑滚动
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
-                    
-                    // 关闭移动导航栏
-                    nav.classList.remove('active');
-                    burger.classList.remove('toggle');
-                }
-            });
-        });
-
-        // 导航栏滚动效果
-        window.addEventListener('scroll', () => {
-            const header = document.querySelector('header');
-            if (window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            } else {
-                header.style.backgroundColor = 'white';
-                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
-            }
-        });
-
-        // 表单提交
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('消息已发送！我们会尽快与您联系。');
-            this.reset();
-        });
-    </script>
-</body>
-</html>
