@@ -101,6 +101,33 @@
             width: 100%;
         }
 
+        /* 个人账号卡片和按钮动画 */
+        .account-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .account-card:hover i {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .account-card:hover h3 {
+            transform: translateY(-2px);
+        }
+
+        .account-card a:hover {
+            transform: translateY(-2px) scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .account-card a:hover span:first-child {
+            transform: translateY(-2px);
+        }
+
+        .account-card a:hover span:last-child {
+            left: 100%;
+        }
+
         .burger {
             display: none;
             cursor: pointer;
@@ -812,6 +839,7 @@
             <ul class="nav-links">
                 <li><a href="#hero">首页</a></li>
                 <li><a href="#about">关于我</a></li>
+                <li><a href="#accounts">个人账号</a></li>
                 <li><a href="#skills">技能</a></li>
                 <li><a href="#projects">项目</a></li>
             </ul>
@@ -848,7 +876,7 @@
                         <img src="avatar.jpg" alt="王乐头像">
                     </div>
                     <div class="about-text">
-                        <h3>一名充满激情的结构工程师</h3>
+                        <h3>一名结构工程师</h3>
                         <p>就读于武汉科技大学机械工程专业，热爱机械领域的的学习和实践，积极参与各类学科竞赛和社会实践活动。</p>
                         <p>在校期间，我获得了多项荣誉称号和奖学金，累计获得机械类学科竞赛项目国家级奖项6项（除去ROBOCON的10多项奖项之后），省级奖项27项，校级奖项若干。</p>
                         <p>热爱DIY、对机械类和电子信息类的产品具有浓厚的兴趣，目前已成功DIY了写字机、激光雕刻机、3D打印机、桌宠等。</p>
@@ -1003,6 +1031,33 @@
                         <p>加入武汉科技大学ROBOCON团队两年，其间团队共获国家级奖项11项，个人挂名国家级奖项8项.</p>
                         <p>主要负责串联四足机器人结构设计（平行四边形连杆机构设计，受力分析+Adams运动学结构解算）；并联四足机器人腿部结构优化设计；四足机器人整机轻量化设计。篮球机器人R1底盘结构设计，发射装置结构设计。</p>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 个人账号 -->
+    <section id="accounts" class="accounts" style="padding: 4rem 0; background-color: #f9f9f9;">
+        <div class="container">
+            <div class="section-title">
+                <h2>个人账号</h2>
+            </div>
+            <div class="accounts-content" style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+                <div class="account-card" style="background: linear-gradient(135deg, #f5f5dc, #efebe9); padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); flex: 1 1 300px; max-width: 400px; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; color: #000000;">
+                    <i class="fas fa-code" style="font-size: 2.5rem; color: #000000; margin-bottom: 1rem; transition: transform 0.3s ease;"></i>
+                    <h3 style="margin-bottom: 1rem; color: #000000; transition: transform 0.3s ease;">CSDN</h3>
+                    <a href="https://blog.csdn.net/2302_78130397?type=blog" target="_blank" style="display: inline-block; padding: 0.8rem 2rem; background-color: var(--main-color); color: #000000; border-radius: 4px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transform-origin: center; cursor: pointer;">
+                        <span style="position: relative; z-index: 2; display: block; transition: transform 0.3s ease;">前往个人主页</span>
+                        <span style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent); transition: left 0.5s ease;"></span>
+                    </a>
+                </div>
+                <div class="account-card" style="background: linear-gradient(135deg, #f5f5dc, #efebe9); padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); flex: 1 1 300px; max-width: 400px; text-align: center; color: #000000; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <i class="fas fa-play" style="font-size: 2.5rem; color: #000000; margin-bottom: 1rem; transition: transform 0.3s ease;"></i>
+                    <h3 style="margin-bottom: 1rem; color: #000000; transition: transform 0.3s ease;">B站</h3>
+                    <a href="https://space.bilibili.com/591104286?spm_id_from=333.1007.0.0" target="_blank" style="display: inline-block; padding: 0.8rem 2rem; background-color: var(--main-color); color: #000000; border-radius: 4px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transform-origin: center; cursor: pointer;">
+                        <span style="position: relative; z-index: 2; display: block; transition: transform 0.3s ease;">前往个人主页</span>
+                        <span style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent); transition: left 0.5s ease;"></span>
+                    </a>
                 </div>
             </div>
         </div>
