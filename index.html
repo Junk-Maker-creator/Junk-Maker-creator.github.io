@@ -877,7 +877,7 @@
                     </div>
                     <div class="about-text">
                         <h3>一名结构工程师</h3>
-                        <p>就读于武汉科技大学机械工程专业，热爱机械领域的的学习和实践，积极参与各类学科竞赛和社会实践活动。</p>
+                        <p>毕业于武汉科技大学机械工程专业，热爱机械领域的的学习和实践，积极参与各类学科竞赛和社会实践活动。</p>
                         <p>在校期间，我获得了多项荣誉称号和奖学金，累计获得机械类学科竞赛项目国家级奖项6项（除去ROBOCON的10多项奖项之后），省级奖项27项，校级奖项若干。</p>
                         <p>热爱DIY、对机械类和电子信息类的产品具有浓厚的兴趣，目前已成功DIY了写字机、激光雕刻机、3D打印机、桌宠等。</p>
                     </div>
@@ -913,6 +913,13 @@
                         </div>
 
                     </div>
+
+                    <!-- 证书查看 -->
+                    <div style="margin-top: 2rem; text-align: center;">
+                        <button onclick="openModal('modal-certificates')" style="padding: 0.8rem 2rem; background-color: var(--primary-color); color: white; border: 2px solid var(--accent-color); border-radius: 4px; font-weight: 600; cursor: pointer; transition: all 0.3s ease; font-family: 'SimSun', 'STSong', serif;">
+                            点击查看证书
+                        </button>
+                    </div>
                 </div>
                 
                 <!-- 右侧模块：教育背景和获奖情况 -->
@@ -923,7 +930,7 @@
                         <div style="background-color: var(--light-gray); padding: 1.5rem; border-radius: 8px;">
                             <h5 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--dark-color);">武汉科技大学</h5>
                             <p style="color: var(--gray-color); font-weight: 700;">2022-2026 | 机械工程专业 | 本科学位</p>
-                            <p style="color: var(--gray-color); font-weight: 700; margin-top: 1rem;">🎓 多头换色3D打印机机械结构研发与装配验证</p>
+                            <p style="color: var(--gray-color); font-weight: 700; margin-top: 1rem;">🎓 毕业设计：多头换色3D打印机机械结构研发与装配验证</p>
                         </div>
                     </div>
                     
@@ -1019,6 +1026,7 @@
                     <div class="experience-details">
                         <p>参与深圳市创客工场科技有限公司stater、inspire赛项及其相关配套产品研发、设计、渲染与成本控制；</p>
                         <p>实习周期 3个月，其间多次接触学习公司相关产品，熟练掌握激光切割设备、图形化编程软件以及3D打印设备等的应用。</p>
+                        <p style="color: var(--primary-color); font-weight: 600;">点击查看详情 →</p>
                     </div>
                 </div>
                 
@@ -1089,7 +1097,58 @@
             <div class="section-title">
                 <h2>我的项目</h2>
             </div>
-            <div class="projects-content">
+            <!-- 项目图片轮播 -->
+            <div style="margin-top: 2rem;">
+                <div style="position: relative; width: 100%; height: 700px; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.15);">
+                    <div id="carousel-projects" style="display: flex; transition: transform 0.5s ease;">
+                        <img src="项目图片/作品集_03.png" alt="项目图片3" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="项目图片/作品集_04.png" alt="项目图片4" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="项目图片/作品集_05.png" alt="项目图片5" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="项目图片/作品集_06.png" alt="项目图片6" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="项目图片/作品集_07.png" alt="项目图片7" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="项目图片/作品集_08.png" alt="项目图片8" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="项目图片/作品集_09.png" alt="项目图片9" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="项目图片/作品集_10.png" alt="项目图片10" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="项目图片/作品集_11.png" alt="项目图片11" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="项目图片/作品集_12.png" alt="项目图片12" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="项目图片/作品集_14.png" alt="项目图片14" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="项目图片/作品集_15.png" alt="项目图片15" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="项目图片/作品集_16.png" alt="项目图片16" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="项目图片/作品集_17.png" alt="项目图片17" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="项目图片/作品集_18.png" alt="项目图片18" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="项目图片/作品集_19.png" alt="项目图片19" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="项目图片/作品集_21.png" alt="项目图片21" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="项目图片/作品集_22.png" alt="项目图片22" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="项目图片/作品集_23.png" alt="项目图片23" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="项目图片/作品集_31.png" alt="项目图片31" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="项目图片/作品集_32.png" alt="项目图片32" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                    </div>
+                    <button onclick="prevSlideProjects()" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer; border-radius: 50%; font-size: 18px; z-index: 10;">&lt;</button>
+                    <button onclick="nextSlideProjects()" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer; border-radius: 50%; font-size: 18px; z-index: 10;">&gt;</button>
+                    <div style="position: absolute; bottom: 10px; left: 0; right: 0; display: flex; justify-content: center; gap: 5px; z-index: 10;">
+                        <span onclick="goToSlideProjects(0)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: var(--primary-color); cursor: pointer;"></span>
+                        <span onclick="goToSlideProjects(1)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(139,0,0,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideProjects(2)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(139,0,0,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideProjects(3)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(139,0,0,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideProjects(4)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(139,0,0,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideProjects(5)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(139,0,0,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideProjects(6)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(139,0,0,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideProjects(7)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(139,0,0,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideProjects(8)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(139,0,0,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideProjects(9)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(139,0,0,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideProjects(10)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(139,0,0,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideProjects(11)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(139,0,0,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideProjects(12)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(139,0,0,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideProjects(13)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(139,0,0,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideProjects(14)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(139,0,0,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideProjects(15)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(139,0,0,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideProjects(16)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(139,0,0,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideProjects(17)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(139,0,0,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideProjects(18)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(139,0,0,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideProjects(19)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(139,0,0,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideProjects(20)" class="dot-projects" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(139,0,0,0.5); cursor: pointer;"></span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1148,6 +1207,19 @@
                         <span onclick="goToSlideRobocon(2)" class="dot-roboncon" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer;"></span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 证书弹窗结构 -->
+    <div id="modal-certificates" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); justify-content: center; align-items: center;">
+        <div style="background-color: #f5f5dc; margin: 5% auto; padding: 2rem; border: 1px solid #888; width: 90%; max-width: 1200px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: relative;">
+            <span onclick="closeModal('modal-certificates')" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+            <h2 style="margin-bottom: 1.5rem; color: var(--primary-color); text-align: center;">技能证书</h2>
+
+            <!-- 证书图片 -->
+            <div style="margin-bottom: 2rem; text-align: center;">
+                <img src="证书汇总图片.jpeg" alt="证书汇总" style="max-width: 100%; max-height: 70vh; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
             </div>
         </div>
     </div>
@@ -1276,6 +1348,52 @@
         // 鼠标离开时恢复ROBOCON轮播
         document.getElementById('carousel-roboncon').addEventListener('mouseleave', function() {
             slideIntervalRobocon = setInterval(nextSlideRobocon, 5000);
+        });
+
+        // 项目图片轮播功能
+        let currentSlideProjects = 0;
+        const slidesProjects = document.querySelectorAll('#carousel-projects img');
+        const dotsProjects = document.querySelectorAll('.dot-projects');
+
+        function updateSlideProjects() {
+            const carouselProjects = document.getElementById('carousel-projects');
+            carouselProjects.style.transform = `translateX(-${currentSlideProjects * 100}%)`;
+
+            dotsProjects.forEach((dot, index) => {
+                if (index === currentSlideProjects) {
+                    dot.style.background = 'var(--primary-color)';
+                } else {
+                    dot.style.background = 'rgba(139,0,0,0.5)';
+                }
+            });
+        }
+
+        function nextSlideProjects() {
+            currentSlideProjects = (currentSlideProjects + 1) % slidesProjects.length;
+            updateSlideProjects();
+        }
+
+        function prevSlideProjects() {
+            currentSlideProjects = (currentSlideProjects - 1 + slidesProjects.length) % slidesProjects.length;
+            updateSlideProjects();
+        }
+
+        function goToSlideProjects(index) {
+            currentSlideProjects = index;
+            updateSlideProjects();
+        }
+
+        // 项目图片自动轮播
+        let slideIntervalProjects = setInterval(nextSlideProjects, 4000);
+
+        // 鼠标悬停时暂停项目图片轮播
+        document.getElementById('carousel-projects').addEventListener('mouseenter', function() {
+            clearInterval(slideIntervalProjects);
+        });
+
+        // 鼠标离开时恢复项目图片轮播
+        document.getElementById('carousel-projects').addEventListener('mouseleave', function() {
+            slideIntervalProjects = setInterval(nextSlideProjects, 4000);
         });
     </script>
 </html>
