@@ -11,6 +11,14 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
+        section {
+            scroll-margin-top: 80px;
+        }
+
         :root {
             --primary-color: #8b0000;
             --secondary-color: #3e2723;
@@ -82,7 +90,8 @@
             position: relative;
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover,
+        .nav-links a.active {
             color: var(--primary-color);
         }
 
@@ -97,8 +106,17 @@
             transition: var(--transition);
         }
 
-        .nav-links a:hover::after {
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
             width: 100%;
+        }
+
+        .nav-links a.active {
+            font-weight: 700;
+        }
+
+        .nav-links a.active::after {
+            box-shadow: 0 0 8px rgba(212, 175, 55, 0.45);
         }
 
         /* 个人账号卡片和按钮动画 */
@@ -126,6 +144,243 @@
 
         .account-card a:hover span:last-child {
             left: 100%;
+        }
+
+        .accounts-content {
+            gap: 1.25rem !important;
+        }
+
+        .accounts-content .account-card {
+            flex: 1 1 200px !important;
+            max-width: 285px !important;
+            padding: 1.5rem !important;
+        }
+
+        /* 经历图片轮播弹窗 */
+        .experience-modal {
+            padding: clamp(1rem, 3vw, 2.5rem);
+            opacity: 0;
+            background: rgba(34, 24, 20, 0.76) !important;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            align-items: center !important;
+            transition: opacity 0.28s ease;
+            will-change: opacity;
+        }
+
+        .experience-modal.modal-active {
+            opacity: 1;
+        }
+
+        .experience-modal.modal-closing {
+            opacity: 0;
+            transition-duration: 0.22s;
+        }
+
+        .experience-modal-panel {
+            display: flex;
+            flex-direction: column;
+            width: min(1040px, 100%) !important;
+            max-width: 1040px !important;
+            height: clamp(560px, 88vh, 780px);
+            max-height: calc(100vh - 2rem);
+            margin: auto !important;
+            padding: 0 !important;
+            overflow: hidden;
+            background: linear-gradient(145deg, #fffdf5, #f4f0df) !important;
+            border: 1px solid rgba(212, 175, 55, 0.75) !important;
+            border-radius: 20px !important;
+            box-shadow: 0 28px 80px rgba(30, 15, 10, 0.35) !important;
+            opacity: 0;
+            transform: translateY(24px) scale(0.965);
+            transform-origin: center;
+            transition: opacity 0.28s ease, transform 0.36s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: opacity, transform;
+        }
+
+        .experience-modal.modal-active .experience-modal-panel {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .experience-modal.modal-closing .experience-modal-panel {
+            opacity: 0;
+            transform: translateY(14px) scale(0.98);
+            transition-duration: 0.2s;
+        }
+
+        .experience-modal-title {
+            display: flex;
+            align-items: center;
+            min-height: 78px;
+            margin: 0 !important;
+            padding: 1.25rem 4.75rem 1rem 2rem;
+            color: var(--primary-color) !important;
+            text-align: left !important;
+            font-size: clamp(1.35rem, 2.3vw, 2rem);
+            line-height: 1.35;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.35);
+        }
+
+        .experience-modal-close {
+            position: absolute;
+            top: 0.8rem;
+            right: 1rem;
+            z-index: 20;
+            display: grid;
+            width: 44px;
+            height: 44px;
+            place-items: center;
+            float: none !important;
+            color: var(--dark-color) !important;
+            font-size: 2rem !important;
+            line-height: 1;
+            background: rgba(139, 0, 0, 0.07);
+            border: 1px solid rgba(139, 0, 0, 0.14);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .experience-modal-close:hover {
+            color: white !important;
+            background: var(--primary-color);
+            transform: rotate(90deg);
+        }
+
+        .experience-modal-gallery {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            min-height: 0;
+            margin: 0 !important;
+            padding: 1.1rem 1.5rem 1.5rem;
+        }
+
+        .experience-modal-subtitle {
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            min-height: 30px;
+            margin: 0 0 0.85rem !important;
+            color: var(--dark-color) !important;
+            font-size: 1rem;
+            letter-spacing: 0.08em;
+        }
+
+        .experience-modal-subtitle::before {
+            width: 30px;
+            height: 3px;
+            content: '';
+            background: var(--accent-color);
+            border-radius: 999px;
+        }
+
+        .experience-carousel-viewport {
+            position: relative !important;
+            flex: 1;
+            width: min(960px, 100%) !important;
+            max-width: 960px;
+            height: clamp(340px, 58vh, 620px) !important;
+            min-height: 340px;
+            margin: 0 auto;
+            overflow: hidden !important;
+            background: radial-gradient(circle at top, #ffffff, #eee9d9);
+            border: 1px solid rgba(212, 175, 55, 0.28);
+            border-radius: 16px !important;
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.65), 0 14px 35px rgba(62, 39, 35, 0.12) !important;
+        }
+
+        .experience-carousel-track {
+            width: 100%;
+            height: 100%;
+        }
+
+        .experience-carousel-track img {
+            display: block;
+            flex: 0 0 100% !important;
+            width: 100% !important;
+            max-width: 100%;
+            height: 100% !important;
+            max-height: 100%;
+            margin: auto;
+            padding: clamp(10px, 1.4vw, 20px) !important;
+            object-fit: contain !important;
+            object-position: center;
+            background: transparent !important;
+        }
+
+        .experience-carousel-track img.carousel-image-enter {
+            animation: carouselImageReveal 0.45s ease both;
+        }
+
+        @keyframes carouselImageReveal {
+            from {
+                opacity: 0.35;
+                transform: scale(0.985);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .experience-carousel-nav {
+            z-index: 10;
+            display: grid;
+            width: 48px;
+            height: 48px;
+            place-items: center;
+            padding: 0 !important;
+            color: white !important;
+            font-size: 1.35rem !important;
+            background: rgba(44, 24, 16, 0.72) !important;
+            border: 1px solid rgba(255, 255, 255, 0.55) !important;
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+
+        .experience-carousel-nav:hover {
+            background: var(--primary-color) !important;
+            transform: translateY(-50%) scale(1.08) !important;
+        }
+
+        .experience-carousel-dots {
+            right: auto !important;
+            bottom: 14px !important;
+            left: 50% !important;
+            width: auto;
+            padding: 0.45rem 0.65rem;
+            background: rgba(44, 24, 16, 0.64);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 999px;
+            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.18);
+            transform: translateX(-50%);
+            backdrop-filter: blur(6px);
+        }
+
+        .experience-carousel-dots span {
+            border: 1px solid rgba(255, 255, 255, 0.75);
+            transition: transform 0.25s ease, background-color 0.25s ease;
+        }
+
+        .experience-carousel-dots span:hover {
+            transform: scale(1.35);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+
+            .hero::before,
+            .hero::after,
+            .experience-modal,
+            .experience-modal-panel,
+            .experience-carousel-track,
+            .experience-carousel-track img {
+                animation: none !important;
+                transition: none !important;
+            }
         }
 
         .burger {
@@ -738,6 +993,29 @@
             font-family: 'SimSun', 'STSong', serif;
         }
 
+        /* 滚动进入动画 */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(26px);
+            transition: opacity 0.68s ease, transform 0.68s cubic-bezier(0.22, 1, 0.36, 1) !important;
+            transition-delay: var(--reveal-delay, 0ms) !important;
+            will-change: opacity, transform;
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal-on-scroll,
+            .reveal-on-scroll.is-visible {
+                opacity: 1;
+                transform: none;
+                transition: none !important;
+            }
+        }
+
         /* 响应式设计 */
         @media screen and (max-width: 768px) {
             .nav-links {
@@ -807,6 +1085,63 @@
             .contact-form {
                 flex: 100%;
             }
+
+            .accounts-content .account-card {
+                flex: 1 1 260px !important;
+                max-width: 400px !important;
+            }
+
+            .experience-modal {
+                padding: 0.65rem;
+            }
+
+            .experience-modal-panel {
+                width: 100% !important;
+                height: calc(100dvh - 1.3rem);
+                min-height: 0;
+                max-height: calc(100dvh - 1.3rem);
+                border-radius: 14px !important;
+            }
+
+            .experience-modal-title {
+                min-height: 62px;
+                padding: 1rem 3.75rem 0.85rem 1rem;
+                font-size: 1.15rem;
+            }
+
+            .experience-modal-close {
+                top: 0.55rem;
+                right: 0.65rem;
+                width: 38px;
+                height: 38px;
+                font-size: 1.7rem !important;
+            }
+
+            .experience-modal-gallery {
+                padding: 0.85rem;
+            }
+
+            .experience-modal-subtitle {
+                margin-bottom: 0.65rem !important;
+                font-size: 0.9rem;
+            }
+
+            .experience-carousel-viewport {
+                width: 100% !important;
+                height: clamp(260px, 58vh, 520px) !important;
+                min-height: 260px;
+                border-radius: 11px !important;
+            }
+
+            .experience-carousel-track img {
+                padding: 8px !important;
+            }
+
+            .experience-carousel-nav {
+                width: 40px;
+                height: 40px;
+                font-size: 1.1rem !important;
+            }
         }
 
         @media screen and (max-width: 480px) {
@@ -839,6 +1174,7 @@
             <ul class="nav-links">
                 <li><a href="#hero">首页</a></li>
                 <li><a href="#about">关于我</a></li>
+                <li><a href="#experience">实践经历</a></li>
                 <li><a href="#accounts">个人账号</a></li>
                 <li><a href="#skills">技能</a></li>
                 <li><a href="#projects">项目</a></li>
@@ -858,7 +1194,7 @@
             <p>Welcome to my personal website</p>
             <p>王乐 | 机械工程专业 | 结构工程师</p>
             <div>
-                <a href="#projects" class="btn btn-primary">查看我的项目</a>
+                <a href="#experience" class="btn btn-primary">查看我的经历</a>
             </div>
         </div>
     </section>
@@ -878,7 +1214,7 @@
                     <div class="about-text">
                         <h3>一名结构工程师</h3>
                         <p>毕业于武汉科技大学机械工程专业，热爱机械领域的的学习和实践，积极参与各类学科竞赛和社会实践活动。</p>
-                        <p>在校期间，我获得了多项荣誉称号和奖学金，累计获得机械类学科竞赛项目国家级奖项6项（除去ROBOCON的10多项奖项之后），省级奖项27项，校级奖项若干。</p>
+                        <p><strong style="font-weight: 900; text-shadow: 0.35px 0 currentColor, -0.35px 0 currentColor;">在校期间，我获得了多项荣誉称号和奖学金，累计获得机械类学科竞赛项目国家级奖项6项（除去ROBOCON的10多项奖项之后），省级奖项27项，校级奖项若干。</strong></p>
                         <p>热爱DIY、对机械类和电子信息类的产品具有浓厚的兴趣，目前已成功DIY了写字机、激光雕刻机、3D打印机、桌宠等。</p>
                     </div>
 
@@ -1007,13 +1343,25 @@
             <div class="experience-content">
                 <div class="experience-card">
                     <div class="experience-header">
+                        <h3>精臣</h3>
+                        <p class="experience-date">2026.7-至今</p>
+                        <p class="experience-position">助理结构工程师</p>
+                    </div>
+                    <div class="experience-details">
+                        <p><strong>工作内容：</strong>To be continue</p>
+                    </div>
+                </div>
+
+                <div class="experience-card" onclick="openModal('modal-dwarf-lab')" style="cursor: pointer;">
+                    <div class="experience-header">
                         <h3>小光子（武汉）科技有限公司</h3>
-                        <p class="experience-date">2025.11-至今</p>
+                        <p class="experience-date">2025.11-2026.7</p>
                         <p class="experience-position">结构工程师/整机结构组长</p>
                     </div>
                     <div class="experience-details">
                         <p><strong>智能影像：</strong>参与智能天文望远镜项目研发，测试。包括机芯散热，结露测试、性能验证、减速器齿轮+机芯结构设计。</p>
                         <p><strong>显微仪器：</strong>独立完成初步Demo搭建，电机性能测试验证。</p>
+                        <p style="color: var(--primary-color); font-weight: 600;">点击查看详情 →</p>
                     </div>
                 </div>
                 
@@ -1036,7 +1384,7 @@
                         <p class="experience-date">2023-2025</p>
                     </div>
                     <div class="experience-details">
-                        <p>加入武汉科技大学ROBOCON团队两年，其间团队共获国家级奖项11项，个人挂名国家级奖项8项.</p>
+                        <p>加入武汉科技大学ROBOCON团队两年，其间团队共获国家级奖项11项，个人挂名国家级奖项8项，并担任2026 Robocon足式仿生机器人任务赛裁判。</p>
                         <p>主要负责串联四足机器人结构设计（平行四边形连杆机构设计，受力分析+Adams运动学结构解算）；并联四足机器人腿部结构优化设计；四足机器人整机轻量化设计。篮球机器人R1底盘结构设计，发射装置结构设计。</p>
                         <p style="color: var(--primary-color); font-weight: 600;">点击查看详情 →</p>
                     </div>
@@ -1076,6 +1424,14 @@
                         <span style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent); transition: left 0.5s ease;"></span>
                     </a>
                 </div>
+                <div class="account-card" style="background: linear-gradient(135deg, #f5f5dc, #efebe9); padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); flex: 1 1 300px; max-width: 400px; text-align: center; color: #000000; transition: transform 0.3s ease, box-shadow 0.3s ease;">
+                    <i class="fas fa-code-branch" style="font-size: 2.5rem; color: #000000; margin-bottom: 1rem; transition: transform 0.3s ease;"></i>
+                    <h3 style="margin-bottom: 1rem; color: #000000; transition: transform 0.3s ease;">开源网站 JMHub</h3>
+                    <a href="https://junk-maker-creator.github.io/JMHub/" target="_blank" rel="noopener noreferrer" style="display: inline-block; padding: 0.8rem 2rem; background-color: var(--main-color); color: #000000; border-radius: 4px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; position: relative; overflow: hidden; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); transform-origin: center; cursor: pointer;">
+                        <span style="position: relative; z-index: 2; display: block; transition: transform 0.3s ease;">前往开源网站</span>
+                        <span style="position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 0.1), transparent); transition: left 0.5s ease;"></span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -1095,7 +1451,7 @@
                 <div class="skill-card">
                     <i class="fas fa-code"></i>
                     <h3>编程能力</h3>
-                    <p>善用AI辅助编程，完成数据处理、自动化脚本等简单开发工作。</p>
+                    <p>善用AI辅助编程，完成数据处理、自动化脚本、知识库搭建及基础结构软件编写等开发工作。</p>
                 </div>
                 <div class="skill-card">
                     <i class="fas fa-microchip"></i>
@@ -1168,26 +1524,51 @@
         </div>
     </section>
 
+    <!-- DWARF LAB弹窗结构 -->
+    <div id="modal-dwarf-lab" class="modal experience-modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); justify-content: center; align-items: center;">
+        <div class="experience-modal-panel" style="background-color: #f5f5dc; margin: 15% auto; padding: 2rem; border: 1px solid #888; width: 80%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: relative;">
+            <span class="experience-modal-close" onclick="closeModal('modal-dwarf-lab')" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+            <h2 class="experience-modal-title" style="margin-bottom: 1.5rem; color: var(--primary-color); text-align: center;">小光子（武汉）科技有限公司</h2>
+
+            <!-- 产品图片轮播 -->
+            <div class="experience-modal-gallery" style="margin-bottom: 2rem;">
+                <h3 class="experience-modal-subtitle" style="margin-bottom: 1rem; color: var(--dark-color);">DWARF LAB产品图片</h3>
+                <div class="experience-carousel-viewport" style="position: relative; width: 100%; height: 600px; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <div id="carousel-dwarf-lab" class="experience-carousel-track" style="display: flex; transition: transform 0.5s ease;">
+                        <img src="DWARF-LAB/Bilbo.jpg" alt="DWARF mini产品图片" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="DWARF-LAB/Dragon.jpg" alt="DRACO智能天文望远镜产品图片" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                    </div>
+                    <button class="experience-carousel-nav" onclick="prevSlideDwarfLab()" aria-label="上一张图片" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer; border-radius: 50%; font-size: 18px;">&lt;</button>
+                    <button class="experience-carousel-nav" onclick="nextSlideDwarfLab()" aria-label="下一张图片" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer; border-radius: 50%; font-size: 18px;">&gt;</button>
+                    <div class="experience-carousel-dots" style="position: absolute; bottom: 10px; left: 0; right: 0; display: flex; justify-content: center; gap: 5px;">
+                        <span onclick="goToSlideDwarfLab(0)" class="dot-dwarf-lab" style="width: 10px; height: 10px; border-radius: 50%; background: white; cursor: pointer;"></span>
+                        <span onclick="goToSlideDwarfLab(1)" class="dot-dwarf-lab" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- 弹窗结构 -->
-    <div id="modal-xtool" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); justify-content: center; align-items: center;">
-        <div style="background-color: #f5f5dc; margin: 15% auto; padding: 2rem; border: 1px solid #888; width: 80%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: relative;">
-            <span onclick="closeModal('modal-xtool')" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
-            <h2 style="margin-bottom: 1.5rem; color: var(--primary-color); text-align: center;">深圳市创客工场科技有限公司（xTool）</h2>
+    <div id="modal-xtool" class="modal experience-modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); justify-content: center; align-items: center;">
+        <div class="experience-modal-panel" style="background-color: #f5f5dc; margin: 15% auto; padding: 2rem; border: 1px solid #888; width: 80%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: relative;">
+            <span class="experience-modal-close" onclick="closeModal('modal-xtool')" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+            <h2 class="experience-modal-title" style="margin-bottom: 1.5rem; color: var(--primary-color); text-align: center;">深圳市创客工场科技有限公司（xTool）</h2>
             
             <!-- 图片轮播 -->
-            <div style="margin-bottom: 2rem;">
-                <h3 style="margin-bottom: 1rem; color: var(--dark-color);">实习照片</h3>
-                <div style="position: relative; width: 100%; height: 600px; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                    <div id="carousel" style="display: flex; transition: transform 0.5s ease;">
+            <div class="experience-modal-gallery" style="margin-bottom: 2rem;">
+                <h3 class="experience-modal-subtitle" style="margin-bottom: 1rem; color: var(--dark-color);">实习照片</h3>
+                <div class="experience-carousel-viewport" style="position: relative; width: 100%; height: 600px; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <div id="carousel" class="experience-carousel-track" style="display: flex; transition: transform 0.5s ease;">
                         <img src="XTOOL图片/starter.jpg" alt="Starter" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
                         <img src="XTOOL图片/inspire.jpg" alt="Inspire" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
                         <img src="XTOOL图片/explorer.png" alt="Explorer" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
                         <img src="XTOOL图片/challenge.png" alt="Challenge" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
                         <img src="XTOOL图片/实习证明.png" alt="实习证明" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
                     </div>
-                    <button onclick="prevSlide()" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer; border-radius: 50%; font-size: 18px;">&lt;</button>
-                    <button onclick="nextSlide()" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer; border-radius: 50%; font-size: 18px;">&gt;</button>
-                    <div style="position: absolute; bottom: 10px; left: 0; right: 0; display: flex; justify-content: center; gap: 5px;">
+                    <button class="experience-carousel-nav" onclick="prevSlide()" aria-label="上一张图片" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer; border-radius: 50%; font-size: 18px;">&lt;</button>
+                    <button class="experience-carousel-nav" onclick="nextSlide()" aria-label="下一张图片" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer; border-radius: 50%; font-size: 18px;">&gt;</button>
+                    <div class="experience-carousel-dots" style="position: absolute; bottom: 10px; left: 0; right: 0; display: flex; justify-content: center; gap: 5px;">
                         <span onclick="goToSlide(0)" class="dot" style="width: 10px; height: 10px; border-radius: 50%; background: white; cursor: pointer;"></span>
                         <span onclick="goToSlide(1)" class="dot" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer;"></span>
                         <span onclick="goToSlide(2)" class="dot" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer;"></span>
@@ -1200,26 +1581,28 @@
     </div>
 
     <!-- ROBOCON弹窗结构 -->
-    <div id="modal-roboncon" class="modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); justify-content: center; align-items: center;">
-        <div style="background-color: #f5f5dc; margin: 15% auto; padding: 2rem; border: 1px solid #888; width: 80%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: relative;">
-            <span onclick="closeModal('modal-roboncon')" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
-            <h2 style="margin-bottom: 1.5rem; color: var(--primary-color); text-align: center;">全国大学生机器人大赛ROBOCON-(图南战队)</h2>
+    <div id="modal-roboncon" class="modal experience-modal" style="display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.4); justify-content: center; align-items: center;">
+        <div class="experience-modal-panel" style="background-color: #f5f5dc; margin: 15% auto; padding: 2rem; border: 1px solid #888; width: 80%; max-width: 800px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: relative;">
+            <span class="experience-modal-close" onclick="closeModal('modal-roboncon')" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
+            <h2 class="experience-modal-title" style="margin-bottom: 1.5rem; color: var(--primary-color); text-align: center;">全国大学生机器人大赛ROBOCON-(图南战队)</h2>
 
             <!-- 图片轮播 -->
-            <div style="margin-bottom: 2rem;">
-                <h3 style="margin-bottom: 1rem; color: var(--dark-color);">ROBOCON团队照片</h3>
-                <div style="position: relative; width: 100%; height: 600px; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
-                    <div id="carousel-roboncon" style="display: flex; transition: transform 0.5s ease;">
+            <div class="experience-modal-gallery" style="margin-bottom: 2rem;">
+                <h3 class="experience-modal-subtitle" style="margin-bottom: 1rem; color: var(--dark-color);">ROBOCON团队照片与证书</h3>
+                <div class="experience-carousel-viewport" style="position: relative; width: 100%; height: 600px; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                    <div id="carousel-roboncon" class="experience-carousel-track" style="display: flex; transition: transform 0.5s ease;">
                         <img src="ROBONCON图片/机器人图片1.png" alt="机器人图片1" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
                         <img src="ROBONCON图片/机器人图片2.png" alt="机器人图片2" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
                         <img src="ROBONCON图片/机器人图片3.png" alt="机器人图片3" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
+                        <img src="ROBONCON图片/ROBOCON裁判证书.jpg" alt="2026 ROBOCON足式仿生机器人任务赛裁判证书" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
                     </div>
-                    <button onclick="prevSlideRobocon()" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer; border-radius: 50%; font-size: 18px;">&lt;</button>
-                    <button onclick="nextSlideRobocon()" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer; border-radius: 50%; font-size: 18px;">&gt;</button>
-                    <div style="position: absolute; bottom: 10px; left: 0; right: 0; display: flex; justify-content: center; gap: 5px;">
+                    <button class="experience-carousel-nav" onclick="prevSlideRobocon()" aria-label="上一张图片" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer; border-radius: 50%; font-size: 18px;">&lt;</button>
+                    <button class="experience-carousel-nav" onclick="nextSlideRobocon()" aria-label="下一张图片" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); color: white; border: none; padding: 10px; cursor: pointer; border-radius: 50%; font-size: 18px;">&gt;</button>
+                    <div class="experience-carousel-dots" style="position: absolute; bottom: 10px; left: 0; right: 0; display: flex; justify-content: center; gap: 5px;">
                         <span onclick="goToSlideRobocon(0)" class="dot-roboncon" style="width: 10px; height: 10px; border-radius: 50%; background: white; cursor: pointer;"></span>
                         <span onclick="goToSlideRobocon(1)" class="dot-roboncon" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer;"></span>
                         <span onclick="goToSlideRobocon(2)" class="dot-roboncon" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideRobocon(3)" class="dot-roboncon" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer;"></span>
                     </div>
                 </div>
             </div>
@@ -1253,13 +1636,150 @@
             }
         });
 
+        // 导航栏当前位置提示
+        const navSectionLinks = Array.from(document.querySelectorAll('.nav-links a[href^="#"]'));
+        const navSections = navSectionLinks
+            .map(link => document.querySelector(link.getAttribute('href')))
+            .filter(Boolean);
+        let navUpdatePending = false;
+
+        function updateActiveNav() {
+            const headerHeight = document.querySelector('header').offsetHeight;
+            const readingLine = window.scrollY + headerHeight + Math.min(window.innerHeight * 0.28, 220);
+            let activeSection = navSections[0];
+
+            navSections.forEach(section => {
+                if (section.offsetTop <= readingLine) {
+                    activeSection = section;
+                }
+            });
+
+            if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+                activeSection = navSections[navSections.length - 1];
+            }
+
+            navSectionLinks.forEach(link => {
+                const isActive = activeSection && link.getAttribute('href') === `#${activeSection.id}`;
+                link.classList.toggle('active', isActive);
+                if (isActive) {
+                    link.setAttribute('aria-current', 'page');
+                } else {
+                    link.removeAttribute('aria-current');
+                }
+            });
+
+            navUpdatePending = false;
+        }
+
+        window.addEventListener('scroll', function() {
+            if (!navUpdatePending) {
+                navUpdatePending = true;
+                requestAnimationFrame(updateActiveNav);
+            }
+        }, { passive: true });
+        window.addEventListener('resize', updateActiveNav);
+        updateActiveNav();
+
+        // 板块标题与内容滚动进入动画
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+            const revealGroups = [
+                { section: '#about', items: '.about-content' },
+                { section: '#experience', items: '.experience-card' },
+                { section: '#accounts', items: '.account-card' },
+                { section: '#skills', items: '.skill-card' },
+                { section: '#projects', items: '.section-title + div' }
+            ];
+
+            const revealObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    }
+
+                    const element = entry.target;
+                    const delay = Number.parseInt(element.style.getPropertyValue('--reveal-delay'), 10) || 0;
+                    element.classList.add('is-visible');
+                    observer.unobserve(element);
+
+                    const cleanupRevealStyles = function() {
+                        element.classList.remove('reveal-on-scroll', 'is-visible');
+                        element.style.removeProperty('--reveal-delay');
+                    };
+
+                    element.addEventListener('transitionend', cleanupRevealStyles, { once: true });
+                    setTimeout(cleanupRevealStyles, delay + 900);
+                });
+            }, {
+                threshold: 0.12,
+                rootMargin: '0px 0px -8% 0px'
+            });
+
+            revealGroups.forEach(group => {
+                const section = document.querySelector(group.section);
+                if (!section) {
+                    return;
+                }
+
+                const title = section.querySelector('.section-title');
+                const items = Array.from(section.querySelectorAll(group.items));
+                const targets = title ? [title, ...items] : items;
+
+                targets.forEach((element, index) => {
+                    element.classList.add('reveal-on-scroll');
+                    element.style.setProperty('--reveal-delay', `${index === 0 ? 0 : 110 + (index - 1) * 85}ms`);
+                    revealObserver.observe(element);
+                });
+            });
+        }
+
         // 弹窗功能
+        const modalCloseDuration = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 220;
+
+        function updateBodyModalState() {
+            const hasOpenModal = Array.from(document.getElementsByClassName('modal'))
+                .some(modal => modal.style.display === 'flex');
+            document.body.style.overflow = hasOpenModal ? 'hidden' : '';
+        }
+
         function openModal(modalId) {
-            document.getElementById(modalId).style.display = 'flex';
+            const modal = document.getElementById(modalId);
+            clearTimeout(modal.closeTimer);
+            cancelAnimationFrame(modal.openFrame);
+            modal.classList.remove('modal-active', 'modal-closing');
+            modal.style.display = 'flex';
+            updateBodyModalState();
+
+            if (modal.classList.contains('experience-modal')) {
+                void modal.offsetWidth;
+                modal.openFrame = requestAnimationFrame(function() {
+                    modal.classList.add('modal-active');
+                });
+            }
+        }
+
+        function finishCloseModal(modal) {
+            modal.style.display = 'none';
+            modal.classList.remove('modal-active', 'modal-closing');
+            updateBodyModalState();
         }
 
         function closeModal(modalId) {
-            document.getElementById(modalId).style.display = 'none';
+            const modal = document.getElementById(modalId);
+            cancelAnimationFrame(modal.openFrame);
+
+            if (modal.classList.contains('experience-modal') && modal.style.display === 'flex') {
+                modal.classList.remove('modal-active');
+                modal.classList.add('modal-closing');
+                clearTimeout(modal.closeTimer);
+                modal.closeTimer = setTimeout(function() {
+                    finishCloseModal(modal);
+                }, modalCloseDuration);
+                return;
+            }
+
+            finishCloseModal(modal);
         }
 
         // 点击弹窗外部关闭
@@ -1267,10 +1787,74 @@
             const modals = document.getElementsByClassName('modal');
             for (let i = 0; i < modals.length; i++) {
                 if (event.target == modals[i]) {
-                    modals[i].style.display = 'none';
+                    closeModal(modals[i].id);
                 }
             }
         }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const openModalElement = Array.from(document.getElementsByClassName('modal'))
+                    .find(modal => modal.style.display === 'flex');
+                if (openModalElement) {
+                    closeModal(openModalElement.id);
+                }
+            }
+        });
+
+        function animateActiveCarouselImage(slides, activeIndex) {
+            slides.forEach(image => image.classList.remove('carousel-image-enter'));
+            const activeImage = slides[activeIndex];
+            if (!activeImage) {
+                return;
+            }
+            void activeImage.offsetWidth;
+            activeImage.classList.add('carousel-image-enter');
+        }
+
+        // DWARF LAB图片轮播功能
+        let currentSlideDwarfLab = 0;
+        const slidesDwarfLab = document.querySelectorAll('#carousel-dwarf-lab img');
+        const dotsDwarfLab = document.querySelectorAll('.dot-dwarf-lab');
+
+        function updateSlideDwarfLab() {
+            const carouselDwarfLab = document.getElementById('carousel-dwarf-lab');
+            carouselDwarfLab.style.transform = `translateX(-${currentSlideDwarfLab * 100}%)`;
+            animateActiveCarouselImage(slidesDwarfLab, currentSlideDwarfLab);
+
+            dotsDwarfLab.forEach((dot, index) => {
+                if (index === currentSlideDwarfLab) {
+                    dot.style.background = 'white';
+                } else {
+                    dot.style.background = 'rgba(255,255,255,0.5)';
+                }
+            });
+        }
+
+        function nextSlideDwarfLab() {
+            currentSlideDwarfLab = (currentSlideDwarfLab + 1) % slidesDwarfLab.length;
+            updateSlideDwarfLab();
+        }
+
+        function prevSlideDwarfLab() {
+            currentSlideDwarfLab = (currentSlideDwarfLab - 1 + slidesDwarfLab.length) % slidesDwarfLab.length;
+            updateSlideDwarfLab();
+        }
+
+        function goToSlideDwarfLab(index) {
+            currentSlideDwarfLab = index;
+            updateSlideDwarfLab();
+        }
+
+        let slideIntervalDwarfLab = setInterval(nextSlideDwarfLab, 5000);
+
+        document.getElementById('carousel-dwarf-lab').addEventListener('mouseenter', function() {
+            clearInterval(slideIntervalDwarfLab);
+        });
+
+        document.getElementById('carousel-dwarf-lab').addEventListener('mouseleave', function() {
+            slideIntervalDwarfLab = setInterval(nextSlideDwarfLab, 5000);
+        });
 
         // 图片轮播功能
         let currentSlide = 0;
@@ -1280,6 +1864,7 @@
         function updateSlide() {
             const carousel = document.getElementById('carousel');
             carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+            animateActiveCarouselImage(slides, currentSlide);
             
             // 更新指示器
             dots.forEach((dot, index) => {
@@ -1327,6 +1912,7 @@
         function updateSlideRobocon() {
             const carouselRobocon = document.getElementById('carousel-roboncon');
             carouselRobocon.style.transform = `translateX(-${currentSlideRobocon * 100}%)`;
+            animateActiveCarouselImage(slidesRobocon, currentSlideRobocon);
 
             dotsRobocon.forEach((dot, index) => {
                 if (index === currentSlideRobocon) {
