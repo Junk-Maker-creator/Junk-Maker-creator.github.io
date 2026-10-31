@@ -1359,9 +1359,12 @@
                         <p class="experience-position">结构工程师/整机结构组长</p>
                     </div>
                     <div class="experience-details">
-                        <p><strong>智能影像：</strong>参与智能天文望远镜项目研发，测试。包括机芯散热，结露测试、性能验证、减速器齿轮+机芯结构设计。</p>
+                        <p><strong>智能影像：</strong>参与智能天文望远镜 Draco 的研发与测试，包括机芯散热、结露测试、性能验证及减速器齿轮与机芯结构设计；负责 Dwarf mini 的售后工作。</p>
                         <p><strong>显微仪器：</strong>独立完成初步Demo搭建，电机性能测试验证。</p>
-                        <p style="color: var(--primary-color); font-weight: 600;">点击查看详情 →</p>
+                        <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 1rem 2rem; margin-top: 1.5rem; align-items: center;">
+                            <button type="button" onclick="event.stopPropagation(); openModal('modal-dwarf-lab')" style="font: inherit; font-weight: 600; color: var(--primary-color); background: none; border: 0; padding: 0; cursor: pointer;">点击查看详情 →</button>
+                            <a href="dwarf-lab-journey/index.html" onclick="event.stopPropagation()" style="display: inline-block; color: var(--primary-color); font-weight: 600; text-decoration: none; background: #faf3dc; border: 1px solid #dfc77d; border-radius: 4px; padding: 0.5rem 0.95rem;">✦ 探索小光子之旅 →</a>
+                        </div>
                     </div>
                 </div>
                 
@@ -1530,11 +1533,13 @@
             <span class="experience-modal-close" onclick="closeModal('modal-dwarf-lab')" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;">&times;</span>
             <h2 class="experience-modal-title" style="margin-bottom: 1.5rem; color: var(--primary-color); text-align: center;">小光子（武汉）科技有限公司</h2>
 
+
             <!-- 产品图片轮播 -->
             <div class="experience-modal-gallery" style="margin-bottom: 2rem;">
-                <h3 class="experience-modal-subtitle" style="margin-bottom: 1rem; color: var(--dark-color);">DWARF LAB产品图片</h3>
+                <h3 class="experience-modal-subtitle" style="margin-bottom: 1rem; color: var(--dark-color);">工作历程与产品图片</h3>
                 <div class="experience-carousel-viewport" style="position: relative; width: 100%; height: 600px; overflow: hidden; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
                     <div id="carousel-dwarf-lab" class="experience-carousel-track" style="display: flex; transition: transform 0.5s ease;">
+                        <img src="DWARF-LAB/工作历程.png" alt="小光子工作历程" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
                         <img src="DWARF-LAB/Bilbo.jpg" alt="DWARF mini产品图片" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
                         <img src="DWARF-LAB/Dragon.jpg" alt="DRACO智能天文望远镜产品图片" style="width: 100%; height: 100%; object-fit: contain; flex: 0 0 100%; background-color: white; padding: 20px;">
                     </div>
@@ -1543,6 +1548,7 @@
                     <div class="experience-carousel-dots" style="position: absolute; bottom: 10px; left: 0; right: 0; display: flex; justify-content: center; gap: 5px;">
                         <span onclick="goToSlideDwarfLab(0)" class="dot-dwarf-lab" style="width: 10px; height: 10px; border-radius: 50%; background: white; cursor: pointer;"></span>
                         <span onclick="goToSlideDwarfLab(1)" class="dot-dwarf-lab" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer;"></span>
+                        <span onclick="goToSlideDwarfLab(2)" class="dot-dwarf-lab" style="width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.5); cursor: pointer;"></span>
                     </div>
                 </div>
             </div>
